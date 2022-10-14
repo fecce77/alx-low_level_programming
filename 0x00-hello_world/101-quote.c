@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <unistd.h>
 
-/*
- * main - entry point does not matter
+/**
+ * main - Entry point does not matter
  *
  * Return: 1
 */
