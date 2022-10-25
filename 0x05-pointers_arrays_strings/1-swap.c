@@ -1,4 +1,4 @@
-nclude "main.h"
+#include "main.h"
 
 /**
  * swap_int - swap the value of two integers.
@@ -10,10 +10,10 @@ nclude "main.h"
 
 void swap_int(int *a, int *b)
 {
-    int c;
+int c;
 
-    c = 0;
-    c = *a;
-    *a = *b;
-    *b = c;
+c = 0;
+c = *a;
+*a = *b;
+*b = c;
 }
