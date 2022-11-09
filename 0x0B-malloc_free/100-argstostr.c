@@ -1,36 +1,54 @@
 #include "main.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
-  * _strdup - Duplicate a string
-  * @str: the string to duplicate
+  * argstostr - convert the params passed to the program to string
+  * @ac: the argument count
+  * @av: the argument vector
   *
-  * Return: the string duplicated
+  * Return: ...
   */
-char *_strdup(char *str)
+char *argstostr(int ac, char **av)
 {
-	int a = 0, i = 1;
+	int ch = 0, i = 0, j = 0, k = 0;
 	char *s;
 
-	if (str == NULL)
+	if (ac == 0 || av == NULL)
 		return (NULL);
 
-	while (str[i])
+	while (i < ac)
 	{
+		while (av[i][j])
+		{
+			ch++;
+			j++;
+		}
+
+		j = 0;
 		i++;
 	}
 
-	s = malloc((sizeof(char) * i) + 1);
+	s = malloc((sizeof(char) * ch) + ac + 1);
 
-	if (s == NULL)
-		return (NULL);
-
-	while (a < i)
+	i = 0;
+	while (av[i])
 	{
-		s[a] = str[a];
-		a++;
+		while (av[i][j])
+		{
+			s[k] = av[i][j];
+			k++;
+			j++;
+		}
+
+		s[k] = '\n';
+
+		j = 0;
+		k++;
+		i++;
 	}
 
-	s[a] = '\0';
+	k++;
+	s[k] = '\0';
 	return (s);
 }
